@@ -55,4 +55,17 @@ def list_products(name: str = Query(default=None, min_length=1, max_length=50, d
             "items": products
     }
     
+
+@app.get("/products/{product_id}")
+def get_product_by_id(product_id:int):
+    products=get_all_products()
+    product = [p for p in products if p["id"] == product_id]
+    if not product:
+        raise HTTPException(status_code=404,detail=f"product not found with this id={id}")
+    return {
+        "message" : "product found",
+        "product" : product[0]
+    }
+        
+        
     
