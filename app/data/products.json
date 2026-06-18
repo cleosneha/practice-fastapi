@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Toothbrush",
+    "category": "Personal Care",
+    "price": 49.99,
+    "brand": "OralFresh",
+    "in_stock": true
+  },
+  {
+    "id": 2,
+    "name": "Toothpaste",
+    "category": "Personal Care",
+    "price": 89.5,
+    "brand": "SmileCare",
+    "in_stock": true
+  },
+  {
+    "id": 3,
+    "name": "Comb",
+    "category": "Personal Care",
+    "price": 25.0,
+    "brand": "StylePro",
+    "in_stock": true
+  },
+  {
+    "id": 4,
+    "name": "Perfume",
+    "category": "Fragrance",
+    "price": 999.0,
+    "brand": "AromaLux",
+    "in_stock": false
+  },
+  {
+    "id": 5,
+    "name": "Shampoo",
+    "category": "Hair Care",
+    "price": 299.0,
+    "brand": "HairGlow",
+    "in_stock": true
+  },
+  {
+    "id": 6,
+    "name": "Face Wash",
+    "category": "Skin Care",
+    "price": 199.0,
+    "brand": "PureSkin",
+    "in_stock": true
+  },
+  {
+    "id": 7,
+    "name": "Hand Sanitizer",
+    "category": "Hygiene",
+    "price": 149.0,
+    "brand": "SafeHands",
+    "in_stock": true
+  },
+  {
+    "id": 8,
+    "name": "Body Lotion",
+    "category": "Skin Care",
+    "price": 349.0,
+    "brand": "SoftTouch",
+    "in_stock": false
+  },
+  {
+    "id": 9,
+    "name": "Hair Oil",
+    "category": "Hair Care",
+    "price": 179.0,
+    "brand": "NatureRoots",
+    "in_stock": true
+  },
+  {
+    "id": 10,
+    "name": "Deodorant",
+    "category": "Fragrance",
+    "price": 249.0,
+    "brand": "FreshWave",
+    "in_stock": true
+  },
+  {
+    "id": 11,
+    "name": "Toothbrush",
+    "category": "Personal Care",
+    "price": 49.99,
+    "brand": "OralFresh",
+    "in_stock": true
+  },
+  {
+    "id": 12,
+    "name": "Comb",
+    "category": "Personal Care",
+    "price": 25.0,
+    "brand": "StylePro",
+    "in_stock": true
+  },
+  {
+    "id": 13,
+    "name": "Shampoo",
+    "category": "Hair Care",
+    "price": 299.0,
+    "brand": "HairGlow",
+    "in_stock": false
+  },
+  {
+    "id": 14,
+    "name": "Face Wash",
+    "category": "Skin Care",
+    "price": 199.0,
+    "brand": "PureSkin",
+    "in_stock": true
+  },
+  {
+    "id": 15,
+    "name": "Perfume",
+    "category": "Fragrance",
+    "price": 999.0,
+    "brand": "AromaLux",
+    "in_stock": true
+  },
+  {
+    "id": 16,
+    "name": "Toothpaste",
+    "category": "Personal Care",
+    "price": 89.5,
+    "brand": "SmileCare",
+    "in_stock": true
+  },
+  {
+    "id": 17,
+    "name": "Body Lotion",
+    "category": "Skin Care",
+    "price": 349.0,
+    "brand": "SoftTouch",
+    "in_stock": true
+  },
+  {
+    "id": 18,
+    "name": "Hair Oil",
+    "category": "Hair Care",
+    "price": 179.0,
+    "brand": "NatureRoots",
+    "in_stock": false
+  },
+  {
+    "id": 19,
+    "name": "Hand Sanitizer",
+    "category": "Hygiene",
+    "price": 149.0,
+    "brand": "SafeHands",
+    "in_stock": true
+  },
+  {
+    "id": 20,
+    "name": "Deodorant",
+    "category": "Fragrance",
+    "price": 249.0,
+    "brand": "FreshWave",
+    "in_stock": true
+  }
+]
