@@ -137,7 +137,7 @@ class Product(BaseModel):
     
     # model validator is used to validate multiple fields
     @model_validator(mode="after")
-    @classmethod
+    
     def validate_business_rules(cls, model : "Product"):
         if model.stock == 0 and model.is_active is True:
             raise ValueError("If stock is 0, active must be false")
