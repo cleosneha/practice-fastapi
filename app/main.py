@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Query
 from service.product import get_all_products
+from schema.product import Product
 app = FastAPI()
 
 @app.get("/")
@@ -66,6 +67,10 @@ def get_product_by_id(product_id:int):
         "message" : "product found",
         "product" : product[0]
     }
-        
-        
+
+
+
+@app.post("/products",status_code=201)
+def create_products(product:Product):
+    return product        
     
