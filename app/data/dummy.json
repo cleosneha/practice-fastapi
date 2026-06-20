@@ -8,14 +8,15 @@
     "brand": "Xiaomi",
     "price": 25058.0,
     "currency": "INR",
-    "discount_percent": 0,
+    "discount_percent": 30,
     "stock": 45,
     "is_active": true,
     "rating": 4.8,
     "tags": [
       "charger",
       "amoled",
-      "tablet"
+      "tablet",
+      "china"
     ],
     "image_urls": [
       "https://cdn.example.com/xiaomi/front.png",
@@ -30,8 +31,10 @@
       "id": "73cbdd06-5668-4e52-b172-e765f8468398",
       "name": "Mi Store",
       "email": "support@mistore.in",
-      "website": "https://www.mistore.in"
+      "website": "https://www.mistore.in/"
     },
-    "created_at": "2024-09-06T00:00:00Z"
+    "created_at": "2024-09-06T00:00:00Z",
+    "final_price": 17540.6,
+    "volume_cm3": 1082.85
   }
 ]

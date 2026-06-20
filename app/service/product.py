@@ -38,3 +38,25 @@ def delete_product(id:str) -> str:
             save_product(products)
             
     return {"message":"Product deleted successully","data":deleted}
+
+def change_product(product_id:str, update_data:dict):
+    products = get_all_products()
+    for idx, product in enumerate(products):
+        if product["id"] == str(product_id):
+
+            for key, value in update_data.items():
+                if value is None:
+                    continue
+
+                if (
+                    isinstance(value, dict)
+                    and isinstance(product.get(key), dict)
+                ):
+                    product[key].update(value)
+                else:
+                    product[key] = value
+
+            products[idx] = product
+            save_product(products)
+
+            return product
