@@ -11,8 +11,46 @@ from typing import Annotated, Literal, Optional, List
 from uuid import UUID
 from datetime import datetime
 
+class Dimensions_cm(BaseModel):
+    length: Annotated[float, Field(gt=0, strict=True, description="Length in cm")]
+    width: Annotated[float, Field(gt=0, strict=True, description="Width in cm")]
+    height: Annotated[float, Field(gt=0, strict=True, description="Height in cm")]
 
+class Seller(BaseModel):
+    id: UUID
+    name: Annotated[
+        str,
+        Field(
+            min_length=2,
+            max_length=60,
+            title="Seller Name",
+            description="Name of the seller (2-60 chars).",
+            examples=["Mi Store", "Apple Store India"],
+        ),
+    ]
+    email: EmailStr
+    website: AnyUrl
 
+    @field_validator("email", mode="after")
+    @classmethod
+    def validate_seller_email_domain(cls, value: EmailStr):
+        allowed_domains = {
+            "mistore.in",
+            "realmeofficial.in",
+            "samsungindia.in",
+            "lenovostore.in",
+            "hpworld.in",
+            "applestoreindia.in",
+            "dellexclusive.in",
+            "sonycenter.in",
+            "oneplusstore.in",
+            "asusexclusive.in",
+        }
+        domain = str(value).split("@")[-1].lower()
+        if domain not in allowed_domains:
+            raise ValueError(f"Seller email domain not allowed: {domain}")
+        return value
+    
 class Product(BaseModel):
     id: UUID
     sku: Annotated[
@@ -79,8 +117,8 @@ class Product(BaseModel):
         List[AnyUrl],
         Field(max_length=1, description="At least 1 image url"),
     ]
-    #dimensions_cm
-    #seller
+    dimensions_cm : Dimensions_cm
+    seller: Seller
     
     #mode="after" ka matlab validator tab chalega jab Pydantic pehle value ko str me convert/validate kar chuka hoga.
     #method class ke context me run hota hai (cls milta hai, self nahi).
@@ -106,3 +144,15 @@ class Product(BaseModel):
         if model.discount_percent > 0 and model.rating == 0:
             raise ValueError("Discounted price must have a rating (rating!=0)")
         return model
+    
+    # adds a new field
+    @computed_field
+    @property
+    def final_price(self)->float:
+        return round(self.price * (1-self.discount_percent/100),2)
+    
+    @computed_field
+    @property
+    def volume_cm3(self) -> float:
+        d = self.dimensions_cm
+        return round(d.length * d.width * d.height, 2)
