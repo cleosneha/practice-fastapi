@@ -4,7 +4,7 @@ from typing import List, Dict
 from fastapi import HTTPException
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_FILE = BASE_DIR / "data" / "dummy.json"
+DATA_FILE = BASE_DIR / "data" / "products.json"
 
 def load_products() -> List[Dict]:
     if not DATA_FILE.exists():
