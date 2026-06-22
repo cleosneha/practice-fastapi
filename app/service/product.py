@@ -49,9 +49,11 @@ def change_product(product_id:str, update_data:dict):
                     continue
 
                 if (
+                    # value is the new data which is dict and both the updated new data and previous data of a particular key should be dict
                     isinstance(value, dict)
                     and isinstance(product.get(key), dict)
                 ):
+                    # .update() dictionary ko merge ya modify karne ke liye use hota hai.
                     product[key].update(value)
                 else:
                     product[key] = value
